@@ -34,4 +34,16 @@ contract("KaspTokens", async (accounts) => {
       "KASP"
     );
   });
+
+  it("Testing Transfer Function", async () => {
+    const KaspTokensInstance = await KaspTokens.deployed();
+
+    expect(KaspTokensInstance.transfer(accounts[1], 100000000)).to.be.eventually
+      .rejected;
+
+    const res = await KaspTokensInstance.transfer(accounts[1], 20);
+    return expect(
+      await KaspTokensInstance.balanceOf(accounts[1])
+    ).to.be.a.bignumber.equal(new BN(20));
+  });
 });
