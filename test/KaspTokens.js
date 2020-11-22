@@ -15,9 +15,23 @@ contract("KaspTokens", async (accounts) => {
     const KaspTokensInstance = await KaspTokens.deployed();
 
     let totalSupply = await KaspTokensInstance.totalSupply();
-    var Initial_supply = 1000000;
+    let Initial_supply = 1000000;
+    let account_bal = await KaspTokensInstance.balanceOf(accounts[0]);
     return expect(
       await KaspTokensInstance.totalSupply()
-    ).to.be.a.bignumber.equal(new BN(Initial_supply));
+    ).to.be.a.bignumber.equal(account_bal);
+  });
+
+  it("Contract Deployed With Correct Values", async () => {
+    const KaspTokensInstance = await KaspTokens.deployed();
+
+    let name = await KaspTokensInstance.name();
+    let Initial_supply = 1000000;
+    let symbol = await KaspTokensInstance.symbol();
+    expect(await KaspTokensInstance.name()).to.be.a.bignumber.equal("Kasper");
+
+    return expect(await KaspTokensInstance.symbol()).to.be.a.bignumber.equal(
+      "KASP"
+    );
   });
 });
