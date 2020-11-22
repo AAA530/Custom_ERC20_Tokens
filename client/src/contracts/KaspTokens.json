@@ -2,9 +2,35 @@
   "contractName": "KaspTokens",
   "abi": [
     {
-      "inputs": [],
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_initial_supply",
+          "type": "uint256"
+        }
+      ],
       "stateMutability": "nonpayable",
       "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function",
+      "constant": true
     },
     {
       "inputs": [],
@@ -21,21 +47,21 @@
       "constant": true
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.6.2+commit.bacdbe57\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Disk_Dhairya/Projects/blockchain/Custom_token_exchange/contracts/KaspTokens.sol\":\"KaspTokens\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Disk_Dhairya/Projects/blockchain/Custom_token_exchange/contracts/KaspTokens.sol\":{\"keccak256\":\"0x08f640ead57a519f316c64b4148bc408fa282ae1d6bdc950d6e4d91970cdb58f\",\"urls\":[\"bzz-raw://1a24eb609b0f9bc34637515e218705cf9956be57b4819ae1266b00740b23bdb1\",\"dweb:/ipfs/QmbGMXwAocazd3R7emmEm586rTNUU5yhdTq9ZeExQ6c1CL\"]}},\"version\":1}",
-  "bytecode": "0x608060405260008055348015601357600080fd5b506305f5e10060008190555060858061002d6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c806318160ddd14602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6000548156fea2646970667358221220bdab6a5271c6a5bd45f51da6cb1137fa58d02a992784ec8d8051e9a7750dcadb64736f6c63430006020033",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060285760003560e01c806318160ddd14602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6000548156fea2646970667358221220bdab6a5271c6a5bd45f51da6cb1137fa58d02a992784ec8d8051e9a7750dcadb64736f6c63430006020033",
-  "sourceMap": "67:126:0:-:0;;;122:1;93:30;;130:61;8:9:-1;5:2;;;30:1;27;20:12;5:2;130:61:0;175:9;161:11;:23;;;;67:126;;;;;;",
-  "deployedSourceMap": "67:126:0:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;67:126:0;;;;;;;;;;;;;;;;;;;93:30;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;:::o",
-  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.5.21 <=0.7.0;\n\ncontract KaspTokens {\n    uint256 public totalSupply = 0;\n\n    constructor() public {\n        totalSupply = 100000000;\n    }\n}\n",
+  "metadata": "{\"compiler\":{\"version\":\"0.6.2+commit.bacdbe57\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_initial_supply\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Disk_Dhairya/Projects/blockchain/Custom_token_exchange/contracts/KaspTokens.sol\":\"KaspTokens\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Disk_Dhairya/Projects/blockchain/Custom_token_exchange/contracts/KaspTokens.sol\":{\"keccak256\":\"0x1ad848a513027c989fd905103262aabf64f323d3a911329ce057f6c0861330c2\",\"urls\":[\"bzz-raw://4b50564b880cd2ecd8acbf5284ef24749e7bc5837203afa82f2825a0c32557b3\",\"dweb:/ipfs/QmQQdxS3JtRZc9t2D8ymK85LnC4tFxmoyGPt6fP5VC43Ku\"]}},\"version\":1}",
+  "bytecode": "0x60806040526000805534801561001457600080fd5b5060405161015a38038061015a8339818101604052602081101561003757600080fd5b8101908080519060200190929190505050806000819055505060fc8061005e6000396000f3fe6080604052348015600f57600080fd5b506004361060325760003560e01c806318160ddd14603757806370a08231146053575b600080fd5b603d60a8565b6040518082815260200191505060405180910390f35b609260048036036020811015606757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505060ae565b6040518082815260200191505060405180910390f35b60005481565b6001602052806000526040600020600091509050548156fea26469706673582212209e94c789e8d5ca2acde7ea6ef1beef30f2673574a66be33b17952eb369a9302064736f6c63430006020033",
+  "deployedBytecode": "0x6080604052348015600f57600080fd5b506004361060325760003560e01c806318160ddd14603757806370a08231146053575b600080fd5b603d60a8565b6040518082815260200191505060405180910390f35b609260048036036020811015606757600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505060ae565b6040518082815260200191505060405180910390f35b60005481565b6001602052806000526040600020600091509050548156fea26469706673582212209e94c789e8d5ca2acde7ea6ef1beef30f2673574a66be33b17952eb369a9302064736f6c63430006020033",
+  "sourceMap": "67:206:0:-:0;;;122:1;93:30;;181:90;8:9:-1;5:2;;;30:1;27;20:12;5:2;181:90:0;;;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;181:90:0;;;;;;;;;;;;;;;;249:15;235:11;:29;;;;181:90;67:206;;;;;;",
+  "deployedSourceMap": "67:206:0:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;67:206:0;;;;;;;;;;;;;;;;;;;;;;;;93:30;;;:::i;:::-;;;;;;;;;;;;;;;;;;;129:45;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;129:45:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;93:30;;;;:::o;129:45::-;;;;;;;;;;;;;;;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.5.21 <=0.7.0;\n\ncontract KaspTokens {\n    uint256 public totalSupply = 0;\n    mapping( address => uint256) public balanceOf;\n\n    constructor(uint256 _initial_supply) public {\n        totalSupply = _initial_supply;\n    }\n}\n",
   "sourcePath": "C:/Disk_Dhairya/Projects/blockchain/Custom_token_exchange/contracts/KaspTokens.sol",
   "ast": {
     "absolutePath": "/C/Disk_Dhairya/Projects/blockchain/Custom_token_exchange/contracts/KaspTokens.sol",
     "exportedSymbols": {
       "KaspTokens": [
-        13
+        19
       ]
     },
-    "id": 14,
+    "id": 20,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -59,9 +85,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 13,
+        "id": 19,
         "linearizedBaseContracts": [
-          13
+          19
         ],
         "name": "KaspTokens",
         "nodeType": "ContractDefinition",
@@ -73,7 +99,7 @@
             "name": "totalSupply",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 13,
+            "scope": 19,
             "src": "93:30:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -112,27 +138,74 @@
             "visibility": "public"
           },
           {
+            "constant": false,
+            "functionSelector": "70a08231",
+            "id": 8,
+            "name": "balanceOf",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 19,
+            "src": "129:45:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 7,
+              "keyType": {
+                "id": 5,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "138:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "129:28:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 6,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "149:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
             "body": {
-              "id": 11,
+              "id": 17,
               "nodeType": "Block",
-              "src": "151:40:0",
+              "src": "225:46:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 9,
+                    "id": 15,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 7,
+                      "id": 13,
                       "name": "totalSupply",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 4,
-                      "src": "161:11:0",
+                      "src": "235:11:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -142,36 +215,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "hexValue": "313030303030303030",
-                      "id": 8,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": true,
-                      "kind": "number",
-                      "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "175:9:0",
-                      "subdenomination": null,
+                      "id": 14,
+                      "name": "_initial_supply",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10,
+                      "src": "249:15:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_rational_100000000_by_1",
-                        "typeString": "int_const 100000000"
-                      },
-                      "value": "100000000"
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
                     },
-                    "src": "161:23:0",
+                    "src": "235:29:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 10,
+                  "id": 16,
                   "nodeType": "ExpressionStatement",
-                  "src": "161:23:0"
+                  "src": "235:29:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 12,
+            "id": 18,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -179,38 +247,66 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 5,
+              "id": 11,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "141:2:0"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10,
+                  "name": "_initial_supply",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 18,
+                  "src": "193:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "193:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "192:25:0"
             },
             "returnParameters": {
-              "id": 6,
+              "id": 12,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "151:0:0"
+              "src": "225:0:0"
             },
-            "scope": 13,
-            "src": "130:61:0",
+            "scope": 19,
+            "src": "181:90:0",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 14,
-        "src": "67:126:0"
+        "scope": 20,
+        "src": "67:206:0"
       }
     ],
-    "src": "32:162:0"
+    "src": "32:242:0"
   },
   "legacyAST": {
     "absolutePath": "/C/Disk_Dhairya/Projects/blockchain/Custom_token_exchange/contracts/KaspTokens.sol",
     "exportedSymbols": {
       "KaspTokens": [
-        13
+        19
       ]
     },
-    "id": 14,
+    "id": 20,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -234,9 +330,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 13,
+        "id": 19,
         "linearizedBaseContracts": [
-          13
+          19
         ],
         "name": "KaspTokens",
         "nodeType": "ContractDefinition",
@@ -248,7 +344,7 @@
             "name": "totalSupply",
             "nodeType": "VariableDeclaration",
             "overrides": null,
-            "scope": 13,
+            "scope": 19,
             "src": "93:30:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -287,27 +383,74 @@
             "visibility": "public"
           },
           {
+            "constant": false,
+            "functionSelector": "70a08231",
+            "id": 8,
+            "name": "balanceOf",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 19,
+            "src": "129:45:0",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+              "typeString": "mapping(address => uint256)"
+            },
+            "typeName": {
+              "id": 7,
+              "keyType": {
+                "id": 5,
+                "name": "address",
+                "nodeType": "ElementaryTypeName",
+                "src": "138:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                }
+              },
+              "nodeType": "Mapping",
+              "src": "129:28:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
+                "typeString": "mapping(address => uint256)"
+              },
+              "valueType": {
+                "id": 6,
+                "name": "uint256",
+                "nodeType": "ElementaryTypeName",
+                "src": "149:7:0",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                }
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
             "body": {
-              "id": 11,
+              "id": 17,
               "nodeType": "Block",
-              "src": "151:40:0",
+              "src": "225:46:0",
               "statements": [
                 {
                   "expression": {
                     "argumentTypes": null,
-                    "id": 9,
+                    "id": 15,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "argumentTypes": null,
-                      "id": 7,
+                      "id": 13,
                       "name": "totalSupply",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 4,
-                      "src": "161:11:0",
+                      "src": "235:11:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
@@ -317,36 +460,31 @@
                     "operator": "=",
                     "rightHandSide": {
                       "argumentTypes": null,
-                      "hexValue": "313030303030303030",
-                      "id": 8,
-                      "isConstant": false,
-                      "isLValue": false,
-                      "isPure": true,
-                      "kind": "number",
-                      "lValueRequested": false,
-                      "nodeType": "Literal",
-                      "src": "175:9:0",
-                      "subdenomination": null,
+                      "id": 14,
+                      "name": "_initial_supply",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 10,
+                      "src": "249:15:0",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_rational_100000000_by_1",
-                        "typeString": "int_const 100000000"
-                      },
-                      "value": "100000000"
+                        "typeIdentifier": "t_uint256",
+                        "typeString": "uint256"
+                      }
                     },
-                    "src": "161:23:0",
+                    "src": "235:29:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "id": 10,
+                  "id": 16,
                   "nodeType": "ExpressionStatement",
-                  "src": "161:23:0"
+                  "src": "235:29:0"
                 }
               ]
             },
             "documentation": null,
-            "id": 12,
+            "id": 18,
             "implemented": true,
             "kind": "constructor",
             "modifiers": [],
@@ -354,29 +492,57 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 5,
+              "id": 11,
               "nodeType": "ParameterList",
-              "parameters": [],
-              "src": "141:2:0"
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 10,
+                  "name": "_initial_supply",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 18,
+                  "src": "193:23:0",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 9,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "193:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "192:25:0"
             },
             "returnParameters": {
-              "id": 6,
+              "id": 12,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "151:0:0"
+              "src": "225:0:0"
             },
-            "scope": 13,
-            "src": "130:61:0",
+            "scope": 19,
+            "src": "181:90:0",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "public"
           }
         ],
-        "scope": 14,
-        "src": "67:126:0"
+        "scope": 20,
+        "src": "67:206:0"
       }
     ],
-    "src": "32:162:0"
+    "src": "32:242:0"
   },
   "compiler": {
     "name": "solc",
@@ -386,12 +552,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0x9368B3fC6edB202c580E549CC52E17519b017e85",
-      "transactionHash": "0xa6cae467cd60fc5d6db9070938462bb7c1a522ff0e49e47a7c070af7a046271d"
+      "address": "0xA1E1394B923C342537e81b5e127d553b29e585AD",
+      "transactionHash": "0xece5bc737ee99e85e2b50e59b1129d510260f1d2ac1bccad855c6f3760f13a4e"
     }
   },
   "schemaVersion": "3.3.2",
-  "updatedAt": "2020-11-22T06:06:05.091Z",
+  "updatedAt": "2020-11-22T06:44:45.744Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
