@@ -4,13 +4,15 @@ import getWeb3 from "./../getWeb3";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 export default function Home() {
   const [accounts, setAccounts] = useState();
   const [KaspTokensInstance, setKaspTokensInstance] = useState();
   const [obj, setObj] = useState({
     loaded: false,
-    address: "",
+    amount: "",
     token_name: "",
   });
   // Similar to componentDidMount and componentDidUpdate:
@@ -79,7 +81,7 @@ export default function Home() {
       >
         <Grid
           container
-          direction="row"
+          direction="column"
           justify="center"
           //   alignItems="center"
           xs={6}
@@ -88,18 +90,40 @@ export default function Home() {
             backgroundColor: "#cfe8fc",
             borderRadius: "50px",
           }}
+          spacing
         >
-          <Grid item xs={6} style={{ margin: "0 auto", textAlign: "center" }}>
-            <p>Kasper Tokens</p>
-            <input
+          <Grid item xs={8} style={{ margin: "0 auto", textAlign: "center" }}>
+            <Typography variant="h4" component="h2">
+              Kasper Tokens ICO Sale
+            </Typography>
+
+            {/* <input
               type="text"
               value={obj.address}
               name="address"
               onChange={handleInputChange}
-            />
-            <button type="submit" onClick={handleOnSubmit}>
-              Submit
-            </button>
+            /> */}
+            <Grid container direction="row">
+              <Grid item xs={8}>
+                <TextField
+                  id="outlined-basic"
+                  label="Outlined"
+                  variant="outlined"
+                  fullWidth
+                  value={obj.address}
+                  name="amount"
+                  onChange={handleInputChange}
+                />
+              </Grid>
+              <Grid item xs={4}>
+                {/* <button type="submit" onClick={handleOnSubmit}>
+                  Submit
+                </button> */}
+                <Button color="primary" onClick={handleOnSubmit}>
+                  Submit
+                </Button>
+              </Grid>
+            </Grid>
             <br />
             <p>{obj.token_name}</p>
             <p>Kasper Tokens</p>
