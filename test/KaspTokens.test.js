@@ -28,7 +28,7 @@ contract("KaspTokens", async (accounts) => {
     let name = await KaspTokensInstance.name();
     let Initial_supply = 1000000;
     let symbol = await KaspTokensInstance.symbol();
-    expect(await KaspTokensInstance.name()).to.be.a.bignumber.equal("Kasper");
+    expect(await KaspTokensInstance.name()).to.be.equal("Kasper");
 
     return expect(await KaspTokensInstance.symbol()).to.be.a.bignumber.equal(
       "KASP"
