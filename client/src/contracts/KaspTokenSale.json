@@ -1,0 +1,120 @@
+{
+  "contractName": "KaspTokenSale",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.2+commit.bacdbe57\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Disk_Dhairya/Projects/blockchain/Custom_token_exchange/contracts/KaspTokenSale.sol\":\"KaspTokenSale\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Disk_Dhairya/Projects/blockchain/Custom_token_exchange/contracts/KaspTokenSale.sol\":{\"keccak256\":\"0x3badf33939ae122c7accdf38d6eeafc42c031458f838fbe82aaa024d944bed3e\",\"urls\":[\"bzz-raw://0e7affcc9bbf9050920adfb945e93c98c306d5c30e7a6cc1355d4843e9020a20\",\"dweb:/ipfs/QmPvD2btT9mpXZYcoUmZvX98fFCNywRGaxP4VvnVu5VnuX\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea264697066735822122044757c14cb1bb3afabc0402f01cc3e857f48a1f6851076b2938f34c5c26115bc64736f6c63430006020033",
+  "deployedBytecode": "0x6080604052600080fdfea264697066735822122044757c14cb1bb3afabc0402f01cc3e857f48a1f6851076b2938f34c5c26115bc64736f6c63430006020033",
+  "sourceMap": "37:33:0:-:0;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;37:33:0;;;;;;;",
+  "deployedSourceMap": "37:33:0:-:0;;;;;",
+  "source": "pragma solidity >=0.5.21 <=0.7.0;\r\n\r\ncontract KaspTokenSale {\r\n    \r\n}",
+  "sourcePath": "C:/Disk_Dhairya/Projects/blockchain/Custom_token_exchange/contracts/KaspTokenSale.sol",
+  "ast": {
+    "absolutePath": "/C/Disk_Dhairya/Projects/blockchain/Custom_token_exchange/contracts/KaspTokenSale.sol",
+    "exportedSymbols": {
+      "KaspTokenSale": [
+        2
+      ]
+    },
+    "id": 3,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".21",
+          "<=",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:33:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "KaspTokenSale",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "37:33:0"
+      }
+    ],
+    "src": "0:70:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Disk_Dhairya/Projects/blockchain/Custom_token_exchange/contracts/KaspTokenSale.sol",
+    "exportedSymbols": {
+      "KaspTokenSale": [
+        2
+      ]
+    },
+    "id": 3,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".21",
+          "<=",
+          "0.7",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:33:0"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "KaspTokenSale",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "37:33:0"
+      }
+    ],
+    "src": "0:70:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.2+commit.bacdbe57.Emscripten.clang"
+  },
+  "networks": {
+    "5777": {
+      "events": {},
+      "links": {},
+      "address": "0x5D8D31fbe6C8697223dB4de82fb877AD69f716ca",
+      "transactionHash": "0x830a6905a6a2f7c66b8a7e61aa97fe75a75318ebda97fec9e78525fda5b28a6f"
+    }
+  },
+  "schemaVersion": "3.3.2",
+  "updatedAt": "2020-11-22T20:36:27.832Z",
+  "networkType": "ethereum",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
