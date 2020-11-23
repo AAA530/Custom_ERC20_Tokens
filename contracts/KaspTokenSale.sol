@@ -6,9 +6,22 @@ contract KaspTokenSale {
     address owner;
     KaspTokens public tokenContract;
     uint256 public tokenprice;
-    constructor(KaspTokens _tokenContract,uint256 _tokenprice) public {
+    uint256 tokenSold;
+
+    event Sell(address _buyer, uint256 _numberOfTokens);
+
+    constructor(KaspTokens _tokenContract, uint256 _tokenprice) public {
         owner = msg.sender;
         tokenContract = _tokenContract;
         tokenprice = _tokenprice;
+    }
+
+    function buyTokens(uint256 _numberOfTokens) public payable {
+        require( msg.value == _numberOfTokens*tokenprice,"Send money accordingly to purchase");
+        require(tokenContract.balanceOf(address(this))>= _numberOfTokens,"Not enough Tokens to Sell");
+        require(tokenContract.transfer(msg.sender,_numberOfTokens));
+        tokenSold += _numberOfTokens;
+
+        emit Sell(msg.sender, _numberOfTokens);
     }
 }
