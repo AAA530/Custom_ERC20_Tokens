@@ -31,6 +31,10 @@ contract KaspTokenSale {
         emit Sell(msg.sender, _numberOfTokens);
     }
 
+    function tokensLeft() public view returns (uint256) {
+        return (tokenContract.balanceOf(address(this)));
+    }
+
     function endSale() public {
         require(msg.sender == owner, "Only Owner can excute this function");
         require(

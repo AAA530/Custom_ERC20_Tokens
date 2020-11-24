@@ -19,6 +19,9 @@ export default function Home() {
     amount: "",
     token_name: "",
     tokenSold: null,
+    availableTokens: 0,
+    myBalance: null,
+    symbol: "",
   });
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
@@ -50,13 +53,33 @@ export default function Home() {
         console.log(KaspTokenSaleInstance);
         setKaspTokenSaleInstance(KaspTokenSaleInstance);
 
+        // Get the Values form Blockchain.
+        const balance = await KaspTokensInstance.methods
+          .balanceOf(accounts[0])
+          .call();
+
+        const symbol = await KaspTokensInstance.methods.symbol().call();
+
+        const to_name = await KaspTokensInstance.methods.name().call();
+
         const tokenSold = await KaspTokenSaleInstance.methods
           .tokenSold()
           .call();
+        const available = await KaspTokenSaleInstance.methods
+          .tokensLeft()
+          .call();
+        const sum = ~~available + ~~tokenSold;
+
         console.log(tokenSold);
-        // Set web3, accounts, and contract to the state, and then proceed with an
-        // example of interacting with the contract's methods.
-        setObj({ ...obj, tokenSold: tokenSold, loaded: true });
+        setObj({
+          ...obj,
+          tokenSold: tokenSold,
+          loaded: true,
+          token_name: to_name,
+          myBalance: balance,
+          symbol: symbol,
+          availableTokens: sum,
+        });
       } catch (error) {
         // Catch any errors for any of the above operations.
         alert(
@@ -84,7 +107,7 @@ export default function Home() {
   const handleOnSubmit = async () => {
     const to_name = await KaspTokensInstance.methods.name().call();
     console.log(to_name);
-    setObj({ ...obj, token_name: to_name });
+    // setObj({ ...obj, token_name: to_name });
   };
 
   return (
@@ -141,6 +164,10 @@ export default function Home() {
 
               <Typography variant="subtitle1" gutterBottom>
                 Your Account Address : {accounts}
+              </Typography>
+
+              <Typography variant="subtitle1" gutterBottom>
+                Your Account Balance : {obj.myBalance} {obj.symbol}
               </Typography>
             </Grid>
           </Grid>
@@ -206,12 +233,12 @@ export default function Home() {
               <Grid container item spacing={3} direction="row">
                 <Grid item xs={12}>
                   <Typography variant="subtitle2" gutterBottom>
-                    Total Tokens Sold : {obj.tokenSold}
+                    Total Tokens Sold : {obj.tokenSold}/{obj.availableTokens}
                   </Typography>
                 </Grid>
               </Grid>
 
-              <p>{obj.token_name}</p>
+              {/* <p>{obj.token_name}</p> */}
             </Grid>
           </Grid>
         </Grid>
