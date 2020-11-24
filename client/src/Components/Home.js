@@ -16,12 +16,13 @@ export default function Home() {
 
   const [obj, setObj] = useState({
     loaded: false,
-    amount: "",
+    amount: 1,
     token_name: "",
     tokenSold: null,
     availableTokens: 0,
     myBalance: null,
     symbol: "",
+    tokenPrice: null,
   });
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
@@ -70,6 +71,10 @@ export default function Home() {
           .call();
         const sum = ~~available + ~~tokenSold;
 
+        const tokenprice = await KaspTokenSaleInstance.methods
+          .tokenprice()
+          .call();
+
         console.log(tokenSold);
         setObj({
           ...obj,
@@ -79,6 +84,7 @@ export default function Home() {
           myBalance: balance,
           symbol: symbol,
           availableTokens: sum,
+          tokenPrice: tokenprice,
         });
       } catch (error) {
         // Catch any errors for any of the above operations.
@@ -105,8 +111,10 @@ export default function Home() {
   };
 
   const handleOnSubmit = async () => {
-    const to_name = await KaspTokensInstance.methods.name().call();
-    console.log(to_name);
+    const res = await KaspTokenSaleInstance.methods.buyTokens(obj.amount).send({
+      from: accounts[0],
+      value: obj.amount * obj.tokenPrice,
+    });
     // setObj({ ...obj, token_name: to_name });
   };
 
