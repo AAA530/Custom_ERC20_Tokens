@@ -55,10 +55,12 @@ export default function Home() {
         setKaspTokenSaleInstance(KaspTokenSaleInstance);
 
         // Get the Values form Blockchain.
+
         const balance = await KaspTokensInstance.methods
           .balanceOf(accounts[0])
           .call();
-
+        // const address = await KaspTokensInstance.address;
+        console.log(KaspTokensInstance._address);
         const symbol = await KaspTokensInstance.methods.symbol().call();
 
         const to_name = await KaspTokensInstance.methods.name().call();
