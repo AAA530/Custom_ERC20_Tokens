@@ -81,33 +81,44 @@ export default function Home() {
       >
         <Grid
           container
+          item
+          xs={6}
           direction="column"
           justify="center"
-          //   alignItems="center"
+          alignItems="center"
+          style={{
+            minHeight: "100vh",
+            backgroundColor: "#ffffff",
+            // borderRadius: "50px",
+          }}
+        >
+          <Typography
+            variant="h4"
+            style={{ margin: "50px auto" }}
+            component="h2"
+          >
+            Kasper Tokens ICO Sale
+          </Typography>
+        </Grid>
+        <Grid
+          container
+          item
+          direction="column"
+          justify="center"
+          alignItems="center"
           xs={6}
           style={{
-            minHeight: "50vh",
+            minHeight: "100vh",
             backgroundColor: "#cfe8fc",
-            borderRadius: "50px",
+            // borderRadius: "50px",
           }}
-          spacing
         >
-          <Grid item xs={8} style={{ margin: "0 auto", textAlign: "center" }}>
-            <Typography variant="h4" component="h2">
-              Kasper Tokens ICO Sale
-            </Typography>
-
-            {/* <input
-              type="text"
-              value={obj.address}
-              name="address"
-              onChange={handleInputChange}
-            /> */}
-            <Grid container direction="row">
+          <Grid container item xs={10} style={{ textAlign: "center" }}>
+            <Grid container item spacing={3} direction="row">
               <Grid item xs={8}>
                 <TextField
                   id="outlined-basic"
-                  label="Outlined"
+                  label="Enter Amount"
                   variant="outlined"
                   fullWidth
                   value={obj.address}
@@ -116,20 +127,17 @@ export default function Home() {
                 />
               </Grid>
               <Grid item xs={4}>
-                {/* <button type="submit" onClick={handleOnSubmit}>
-                  Submit
-                </button> */}
-                <Button color="primary" onClick={handleOnSubmit}>
-                  Submit
+                <Button
+                  color="primary"
+                  style={{ width: "100%", height: "100%" }}
+                  onClick={handleOnSubmit}
+                >
+                  BUY
                 </Button>
               </Grid>
             </Grid>
             <br />
             <p>{obj.token_name}</p>
-            <p>Kasper Tokens</p>
-            <p>Kasper Tokens</p>
-            <p>Kasper Tokens</p>
-            <p>Kasper Tokens</p>
           </Grid>
         </Grid>
       </Grid>
