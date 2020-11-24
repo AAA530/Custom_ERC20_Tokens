@@ -6,7 +6,7 @@ contract KaspTokenSale {
     address payable owner;
     KaspTokens public tokenContract;
     uint256 public tokenprice;
-    uint256 tokenSold;
+    uint256 public tokenSold;
 
     event Sell(address _buyer, uint256 _numberOfTokens);
 
@@ -41,6 +41,5 @@ contract KaspTokenSale {
         );
 
         selfdestruct(owner);
-
     }
 }

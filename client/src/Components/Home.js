@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import KaspTokens from "./../contracts/KaspTokens.json";
+import KaspTokenSale from "./../contracts/KaspTokenSale.json";
+
 import getWeb3 from "./../getWeb3";
 import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
@@ -10,10 +12,13 @@ import Button from "@material-ui/core/Button";
 export default function Home() {
   const [accounts, setAccounts] = useState();
   const [KaspTokensInstance, setKaspTokensInstance] = useState();
+  const [KaspTokenSaleInstance, setKaspTokenSaleInstance] = useState();
+
   const [obj, setObj] = useState({
     loaded: false,
     amount: "",
     token_name: "",
+    tokenSold: null,
   });
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
@@ -37,9 +42,21 @@ export default function Home() {
         console.log(KaspTokensInstance);
         setKaspTokensInstance(KaspTokensInstance);
 
+        const KaspTokenSaleInstance = new web3.eth.Contract(
+          KaspTokenSale.abi,
+          KaspTokenSale.networks[networkId] &&
+            KaspTokenSale.networks[networkId].address
+        );
+        console.log(KaspTokenSaleInstance);
+        setKaspTokenSaleInstance(KaspTokenSaleInstance);
+
+        const tokenSold = await KaspTokenSaleInstance.methods
+          .tokenSold()
+          .call();
+        console.log(tokenSold);
         // Set web3, accounts, and contract to the state, and then proceed with an
         // example of interacting with the contract's methods.
-        setObj({ ...obj, loaded: true });
+        setObj({ ...obj, tokenSold: tokenSold, loaded: true });
       } catch (error) {
         // Catch any errors for any of the above operations.
         alert(
@@ -88,17 +105,45 @@ export default function Home() {
           alignItems="center"
           style={{
             minHeight: "100vh",
-            backgroundColor: "#ffffff",
+            // backgroundColor: "#ffe3e1",
             // borderRadius: "50px",
           }}
         >
-          <Typography
-            variant="h4"
-            style={{ margin: "50px auto" }}
-            component="h2"
+          <Grid
+            container
+            item
+            xs={10}
+            direction="column"
+            // justify="center"
+            alignItems="center"
+            style={{
+              minHeight: "50vh",
+              // backgroundColor: "#cfe8fc",
+              // borderRadius: "50px",
+            }}
+            spacing={5}
           >
-            Kasper Tokens ICO Sale
-          </Typography>
+            <Grid
+              item
+              container
+              direction="column"
+              xs={12}
+              alignItems="center"
+              // style={{ textAlign: "center" }}
+            >
+              <Typography
+                variant="h4"
+                // style={{ margin: "50px auto" }}
+                component="h2"
+              >
+                Kasper Tokens ICO Sale
+              </Typography>
+
+              <Typography variant="subtitle1" gutterBottom>
+                Your Account Address : {accounts}
+              </Typography>
+            </Grid>
+          </Grid>
         </Grid>
         <Grid
           container
@@ -113,31 +158,61 @@ export default function Home() {
             // borderRadius: "50px",
           }}
         >
-          <Grid container item xs={10} style={{ textAlign: "center" }}>
-            <Grid container item spacing={3} direction="row">
-              <Grid item xs={8}>
-                <TextField
-                  id="outlined-basic"
-                  label="Enter Amount"
-                  variant="outlined"
-                  fullWidth
-                  value={obj.address}
-                  name="amount"
-                  onChange={handleInputChange}
-                />
+          <Grid
+            container
+            item
+            xs={10}
+            direction="column"
+            // justify="center"
+            alignItems="center"
+            style={{
+              minHeight: "50vh",
+              // backgroundColor: "#ffe3e1",
+              // borderRadius: "50px",
+            }}
+            spacing={5}
+          >
+            <Grid
+              container
+              item
+              xs={10}
+              direction="column"
+              alignItems="center"
+              spacing={3}
+              // style={{ textAlign: "center" }}
+            >
+              <Grid container item spacing={3} direction="row">
+                <Grid item xs={8}>
+                  <TextField
+                    id="outlined-basic"
+                    label="Enter Amount"
+                    variant="outlined"
+                    fullWidth
+                    value={obj.address}
+                    name="amount"
+                    onChange={handleInputChange}
+                  />
+                </Grid>
+                <Grid item xs={4}>
+                  <Button
+                    color="primary"
+                    style={{ width: "100%", height: "100%" }}
+                    onClick={handleOnSubmit}
+                  >
+                    BUY
+                  </Button>
+                </Grid>
               </Grid>
-              <Grid item xs={4}>
-                <Button
-                  color="primary"
-                  style={{ width: "100%", height: "100%" }}
-                  onClick={handleOnSubmit}
-                >
-                  BUY
-                </Button>
+              <Grid container item spacing={3} direction="row">
+                <Grid item xs={12}>
+                  <Typography variant="subtitle2" gutterBottom>
+                    Total Tokens Sold : {obj.tokenSold}
+                  </Typography>
+                </Grid>
               </Grid>
+
+              <p>{obj.token_name}</p>
             </Grid>
-            <br />
-            <p>{obj.token_name}</p>
           </Grid>
         </Grid>
       </Grid>
